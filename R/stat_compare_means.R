@@ -218,7 +218,7 @@ StatCompareMeans<- ggproto("StatCompareMeans", Stat,
                       .test <- do.call(compare_means, method.args)
                     }
 
-                    pvaltxt <- ifelse(.test$p < 2.2e-16, "p < 2.2e-16",
+                    pvaltxt <- ifelse(.test$p < 1e-100, "p < 1e-100",
                                       paste("p =", signif(.test$p, 2)))
                     .test$label <- paste(.test$method, pvaltxt, sep =  label.sep)
 
